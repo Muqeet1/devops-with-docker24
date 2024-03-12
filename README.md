@@ -1,11 +1,12 @@
-# devops-with-docker24
+## devops-with-docker24
 
-This repository is used solely for submitting the exercises done during the course: DevOps with Docker 2024 edition. The course providers are University of Helsinki & Eficode.
+This repository is used solely for submitting the exercises done during the course: DevOps with Docker 2024 edition. 
+Course providers: **University of Helsinki & Eficode**.
 
-Course description:
+Description:
 This course provides an introduction to container technologies, with a particular focus on Docker and container orchestration using Docker Compose. Containers are a lightweight, portable way to package and deploy software applications. Throughout the course, we'll explore the various components of web services, such as reverse proxies and databases, and how they can be deployed using Docker.
 
-Course is mainly divided into three parts briefly:
+It is mainly divided into three parts briefly:
 
 Part 1: DevOps with Docker
 
