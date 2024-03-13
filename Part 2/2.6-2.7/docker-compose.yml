@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    image: example-frontend
+    container_name: front
+    ports:
+      - "5000:5000"
+    build:
+      context: front
+    
+  backend:
+    environment:
+      - REDIS_HOST=rediscache
+      - POSTGRES_HOST=db_postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    image: example-backend
+    container_name: back
+    ports:
+      - "8080:8080"
+    build:
+      context: back
+    restart: unless-stopped
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    container_name: db_postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data
+
+  cache-redis:
+    image: redis
+    container_name: rediscache
+    ports:
+      - "6379:6379"

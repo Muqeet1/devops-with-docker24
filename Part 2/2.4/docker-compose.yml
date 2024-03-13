@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    image: example-frontend
+    container_name: front
+    ports:
+      - "5000:5000"
+    build:
+      context: front
+    
+  backend:
+    environment:
+      - REDIS_HOST=rediscache
+    image: example-backend
+    container_name: back
+    ports:
+      - "8080:8080"
+    build:
+      context: back
+    restart: unless-stopped
+
+  cache-redis:
+    image: redis
+    container_name: rediscache
+    ports:
+      - "6379:6379"
