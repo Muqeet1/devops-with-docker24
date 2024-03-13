@@ -1,0 +1,5 @@
+Created a simple react app, created a docker image & pushed to DockerHub:
+
+DockerHub image: dartherm/react-chart-app
+
+Deployed app: https://react-app-ihcu.onrender.com
